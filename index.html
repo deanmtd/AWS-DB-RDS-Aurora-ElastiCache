@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS Database Services Portfolio Project</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #232f3e;
+            color: white;
+            padding: 30px 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        h2 {
+            color: #232f3e;
+            border-bottom: 2px solid #ff9900;
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+        h3 {
+            color: #0073bb;
+            margin-top: 25px;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .intro {
+            font-size: 1.1em;
+            margin-bottom: 30px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f1f8ff;
+            color: #0073bb;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        .feature-list {
+            list-style-type: decimal;
+            padding-left: 20px;
+        }
+        .feature-list li {
+            margin-bottom: 10px;
+        }
+        .highlight {
+            background-color: #fffae6;
+            padding: 20px;
+            border-left: 4px solid #ff9900;
+            margin: 20px 0;
+        }
+        .toc {
+            background-color: #f1f8ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .toc ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .toc li {
+            margin-bottom: 8px;
+        }
+        .toc a {
+            color: #0073bb;
+            text-decoration: none;
+        }
+        .toc a:hover {
+            text-decoration: underline;
+        }
+        .aws-logo {
+            color: #ff9900;
+            font-weight: bold;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #666;
+            font-size: 0.9em;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            margin: 15px 0;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><span class="aws-logo">AWS</span> Database Services: Implementation and Comparison</h1>
+        <p>A comprehensive portfolio demonstrating proficiency in Amazon RDS, Aurora, and ElastiCache</p>
+    </header>
+
+    <div class="container">
+        <div class="intro">
+            <p>This portfolio project demonstrates my proficiency in implementing and managing various AWS database services. Through hands-on implementation and analysis, I explore the key features, configuration options, and use cases for Amazon RDS, Aurora, and ElastiCache. This project showcases my ability to select appropriate database solutions for different scenarios and implement them following AWS best practices.</p>
+        </div>
+
+        <div class="toc">
+            <h2>Table of Contents</h2>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#amazon-rds-implementation">Amazon RDS Implementation</a></li>
+                <li><a href="#amazon-aurora-implementation">Amazon Aurora Implementation</a></li>
+                <li><a href="#amazon-elasticache-implementation">Amazon ElastiCache Implementation</a></li>
+                <li><a href="#comparative-analysis">Comparative Analysis</a></li>
+                <li><a href="#best-practices-and-recommendations">Best Practices and Recommendations</a></li>
+                <li><a href="#conclusion">Conclusion</a></li>
+            </ul>
+        </div>
+
+        <section id="introduction" class="section">
+            <h2>Introduction</h2>
+            <p>AWS offers multiple database services to meet various application requirements. This project explores three primary database services:</p>
+            <ul>
+                <li><strong>Amazon RDS</strong>: A managed relational database service supporting multiple database engines</li>
+                <li><strong>Amazon Aurora</strong>: A MySQL and PostgreSQL-compatible relational database built for the cloud</li>
+                <li><strong>Amazon ElastiCache</strong>: A managed in-memory caching service supporting Redis and Memcached</li>
+            </ul>
+            <p>Understanding when and how to use each service is crucial for designing efficient, scalable, and cost-effective cloud architectures.</p>
+            <img src="Images/aws_database_services_overview.png" alt="AWS Database Services Overview" width="400">
+        </section>
+
+        <section id="amazon-rds-implementation" class="section">
+            <h2>Amazon RDS Implementation</h2>
+            
+            <h3>Creation Process</h3>
+            <p>I implemented an Amazon RDS MySQL database instance following these steps:</p>
+            <ol class="feature-list">
+                <li>Selected the <strong>Standard Create</strong> method to access all configuration options</li>
+                <li>Chose <strong>MySQL 8.0.28</strong> as the database engine</li>
+                <li>Used a <strong>Production</strong> template but modified settings to stay within free tier limits</li>
+                <li>Selected <strong>Single DB instance</strong> for availability (free tier constraint)</li>
+                <li>Configured instance identifier as "database-1" with admin credentials</li>
+                <li>Selected <strong>db.t3.micro</strong> instance type (burstable class) for free tier eligibility</li>
+                <li>Configured <strong>gp2</strong> storage type with 20GB allocated storage</li>
+                <li>Enabled <strong>storage autoscaling</strong> with a 1000GB maximum threshold</li>
+                <li>Configured <strong>public access</strong> to allow connections from external clients</li>
+                <li>Created a security group named "demo-database-mysql" with appropriate ingress rules</li>
+                <li>Implemented <strong>password authentication</strong> for database access</li>
+                <li>Created an initial database named "mydb"</li>
+                <li>Configured backup retention period of 7 days</li>
+                <li>Enabled <strong>deletion protection</strong> to prevent accidental deletion</li>
+            </ol>
+            <img src="Images/rds_creation_process.png" alt="RDS Instance Creation Process" width="400">
+
+            <h3>Connectivity and Testing</h3>
+            <p>After implementation, I:</p>
+            <ol class="feature-list">
+                <li>Identified the database endpoint and port (3306)</li>
+                <li>Verified the security group configuration to ensure proper access</li>
+                <li>Connected to the database using Sqlelectron client</li>
+                <li>Successfully created a table and inserted test data</li>
+                <li>Validated data retrieval capabilities</li>
+            </ol>
+            <img src="Images/rds_connectivity_testing.png" alt="RDS Connectivity and Testing" width="400">
+
+            <h3>Management Features</h3>
+            <p>I explored the following management capabilities:</p>
+            <ol class="feature-list">
+                <li><strong>Read Replicas</strong>: Demonstrated the process to create a read replica for scaling read operations</li>
+                <li><strong>Monitoring</strong>: Reviewed CPU utilization and connection count metrics</li>
+                <li><strong>Snapshots</strong>: Examined the backup and snapshot capabilities</li>
+                <li><strong>Point-in-Time Recovery</strong>: Identified the process for restoring to a specific point in time</li>
+                <li><strong>Maintenance</strong>: Explored the maintenance window configuration options</li>
+            </ol>
+            <img src="Images/rds_management_features.png" alt="RDS Management Features" width="400">
+        </section>
+
+        <section id="amazon-aurora-implementation" class="section">
+            <h2>Amazon Aurora Implementation</h2>
+            
+            <h3>Creation Process</h3>
+            <p>I implemented an Amazon Aurora MySQL-compatible cluster with the following configuration:</p>
+            <ol class="feature-list">
+                <li>Selected <strong>Standard Create</strong> with MySQL compatibility</li>
+                <li>Chose Aurora version <strong>3.04.1</strong> (default at time of implementation)</li>
+                <li>Used <strong>Production</strong> template to access all configuration options</li>
+                <li>Configured cluster identifier as "database-2" with admin credentials</li>
+                <li>Selected <strong>Aurora Standard</strong> for cluster storage configuration</li>
+                <li>Chose <strong>db.t3.medium</strong> instance class for cost-effectiveness</li>
+                <li>Implemented <strong>Multi-AZ</strong> deployment with one writer and one reader for high availability</li>
+                <li>Configured <strong>public access</strong> to allow external connections</li>
+                <li>Created a security group named "demo-database-aurora"</li>
+                <li>Set <strong>local write forwarding</strong> to simplify connection management</li>
+                <li>Created an initial database named "mydb"</li>
+                <li>Set backup retention to 1 day</li>
+            </ol>
+            <img src="Images/aurora_creation_process.png" alt="Aurora Cluster Creation Process" width="400">
+
+            <h3>Advanced Features</h3>
+            <p>I explored several advanced Aurora features:</p>
+            <ol class="feature-list">
+                <li><strong>Endpoints</strong>: Identified the reader and writer endpoints for proper connection management</li>
+                <li><strong>Read Replica Scaling</strong>: Demonstrated the process to add additional read replicas</li>
+                <li><strong>Auto-Scaling</strong>: Configured a read replica auto-scaling policy based on CPU utilization (target: 60%)</li>
+                <li><strong>Global Database</strong>: Identified the requirements for implementing a cross-region Aurora deployment</li>
+                <li><strong>Serverless Option</strong>: Noted the availability of Aurora Serverless v2 with ACU-based scaling</li>
+            </ol>
+            <img src="Images/aurora_advanced_features.png" alt="Aurora Advanced Features" width="400">
+        </section>
+
+        <section id="amazon-elasticache-implementation" class="section">
+            <h2>Amazon ElastiCache Implementation</h2>
+            
+            <h3>Creation Process</h3>
+            <p>I implemented an Amazon ElastiCache Redis cluster with the following configuration:</p>
+            <ol class="feature-list">
+                <li>Selected <strong>Design your own cache</strong> option for maximum control</li>
+                <li>Chose <strong>cluster mode disabled</strong> for simplicity (single shard)</li>
+                <li>Named the cluster "DemoCluster"</li>
+                <li>Disabled <strong>Multi-AZ</strong> for cost savings (noted its importance for production)</li>
+                <li>Selected <strong>t2.micro</strong> instance type for free tier eligibility</li>
+                <li>Configured with zero replicas (cost consideration)</li>
+                <li>Created a subnet group to specify VPC deployment locations</li>
+                <li>Disabled encryption features for simplicity</li>
+                <li>Configured appropriate security groups for network access</li>
+            </ol>
+            <img src="Images/elasticache_creation_process.png" alt="ElastiCache Cluster Creation Process" width="400">
+
+            <h3>Key Features</h3>
+            <p>I explored several important ElastiCache features:</p>
+            <ol class="feature-list">
+                <li><strong>Endpoints</strong>: Identified the primary endpoint for application connections</li>
+                <li><strong>Security</strong>: Reviewed authentication options (Redis AUTH and user group ACLs)</li>
+                <li><strong>Encryption</strong>: Noted the available encryption at rest and in transit options</li>
+                <li><strong>Backup</strong>: Explored the backup configuration options</li>
+                <li><strong>Logging</strong>: Identified CloudWatch integration for slow logs and engine logs</li>
+                <li><strong>Maintenance</strong>: Examined the maintenance window configuration</li>
+            </ol>
+            <img src="Images/elasticache_key_features.png" alt="ElastiCache Key Features" width="400">
+        </section>
+
+        <section id="comparative-analysis" class="section">
+            <h2>Comparative Analysis</h2>
+            
+            <h3>Performance Characteristics</h3>
+            <table>
+                <tr>
+                    <th>Service</th>
+                    <th>Performance Characteristics</th>
+                    <th>Scaling Capabilities</th>
+                </tr>
+                <tr>
+                    <td>RDS</td>
+                    <td>Moderate performance with optimization options</td>
+                    <td>Vertical scaling with instance type changes; Horizontal scaling with read replicas</td>
+                </tr>
+                <tr>
+                    <td>Aurora</td>
+                    <td>5x performance of MySQL; 3x performance of PostgreSQL</td>
+                    <td>Vertical scaling with instance type changes; Automated storage scaling; Read replica auto-scaling</td>
+                </tr>
+                <tr>
+                    <td>ElastiCache</td>
+                    <td>Sub-millisecond latency for in-memory operations</td>
+                    <td>Vertical scaling with instance type changes; Horizontal scaling with additional nodes; Serverless option for automatic scaling</td>
+                </tr>
+            </table>
+            <img src="Images/performance_comparison_chart.png" alt="Database Services Performance Comparison" width="400">
+
+            <h3>Use Cases</h3>
+            <table>
+                <tr>
+                    <th>Service</th>
+                    <th>Ideal Use Cases</th>
+                    <th>Limitations</th>
+                </tr>
+                <tr>
+                    <td>RDS</td>
+                    <td>Traditional relational database workloads; Applications requiring specific database engines</td>
+                    <td>Limited scaling capabilities compared to Aurora</td>
+                </tr>
+                <tr>
+                    <td>Aurora</td>
+                    <td>High-performance database workloads; Applications requiring high availability; Global applications</td>
+                    <td>Higher cost compared to standard RDS</td>
+                </tr>
+                <tr>
+                    <td>ElastiCache</td>
+                    <td>Caching layer for frequent read operations; Session management; Leaderboards and real-time analytics</td>
+                    <td>Not suitable as a primary data store; Limited data persistence</td>
+                </tr>
+            </table>
+            <img src="Images/use_cases_diagram.png" alt="Database Services Use Cases" width="400">
+
+            <h3>Cost Considerations</h3>
+            <table>
+                <tr>
+                    <th>Service</th>
+                    <th>Cost Factors</th>
+                    <th>Free Tier Options</th>
+                </tr>
+                <tr>
+                    <td>RDS</td>
+                    <td>Instance type; Storage; Multi-AZ; Backup retention</td>
+                    <td>db.t2.micro/db.t3.micro for 12 months</td>
+                </tr>
+                <tr>
+                    <td>Aurora</td>
+                    <td>Instance type; Storage; Multi-AZ; I/O operations</td>
+                    <td>No free tier available</td>
+                </tr>
+                <tr>
+                    <td>ElastiCache</td>
+                    <td>Instance type; Number of nodes; Cache node type</td>
+                    <td>No standard free tier, but t2.micro/t3.micro are lowest cost options</td>
+                </tr>
+            </table>
+            <img src="Images/cost_comparison_chart.png" alt="Database Services Cost Comparison" width="400">
+        </section>
+
+        <section id="best-practices-and-recommendations" class="section">
+            <h2>Best Practices and Recommendations</h2>
+            <p>Based on my implementation experience, I recommend the following best practices:</p>
+
+            <h3>Security</h3>
+            <div class="highlight">
+                <ol class="feature-list">
+                    <li><strong>Limit public access</strong>: Only enable public access when necessary; use VPC endpoints when possible</li>
+                    <li><strong>Implement least privilege</strong>: Use security groups to restrict access to required sources</li>
+                    <li><strong>Enable encryption</strong>: Implement encryption at rest and in transit for sensitive data</li>
+                    <li><strong>Use IAM authentication</strong>: Leverage IAM roles for database access when possible</li>
+                </ol>
+            </div>
+            <img src="Images/security_best_practices.png" alt="Database Security Best Practices" width="400">
+
+            <h3>Performance</h3>
+            <div class="highlight">
+                <ol class="feature-list">
+                    <li><strong>Right-size instances</strong>: Select appropriate instance types based on workload requirements</li>
+                    <li><strong>Implement read replicas</strong>: Use read replicas to offload read operations from primary instances</li>
+                    <li><strong>Enable monitoring</strong>: Monitor database metrics to identify performance bottlenecks</li>
+                    <li><strong>Implement caching</strong>: Use ElastiCache to reduce database load for frequently accessed data</li>
+                </ol>
+            </div>
+            <img src="Images/performance_best_practices.png" alt="Database Performance Best Practices" width="400">
+
+            <h3>High Availability</h3>
+            <div class="highlight">
+                <ol class="feature-list">
+                    <li><strong>Enable Multi-AZ</strong>: Implement Multi-AZ deployments for production workloads</li>
+                    <li><strong>Configure automatic failover</strong>: Ensure automatic failover is enabled for quick recovery</li>
+                    <li><strong>Implement backup strategies</strong>: Configure appropriate backup retention periods</li>
+                    <li><strong>Test recovery procedures</strong>: Regularly test database recovery procedures</li>
+                </ol>
+            </div>
+            <img src="Images/high_availability_architecture.png" alt="High Availability Database Architecture" width="400">
+
+            <h3>Cost Optimization</h3>
+            <div class="highlight">
+                <ol class="feature-list">
+                    <li><strong>Use free tier options</strong>: Leverage free tier offerings for development and testing</li>
+                    <li><strong>Implement auto-scaling</strong>: Configure auto-scaling to adjust resources based on demand</li>
+                    <li><strong>Monitor usage</strong>: Regularly review database utilization to identify optimization opportunities</li>
+                    <li><strong>Consider serverless options</strong>: Evaluate serverless options for unpredictable workloads</li>
+                </ol>
+            </div>
+            <img src="Images/cost_optimization_strategies.png" alt="Database Cost Optimization Strategies" width="400">
+        </section>
+
+        <section id="conclusion" class="section">
+            <h2>Conclusion</h2>
+            <p>This project demonstrates my ability to implement and manage various AWS database services. Through hands-on implementation of RDS, Aurora, and ElastiCache, I've gained practical experience in selecting appropriate database solutions for different scenarios and implementing them following AWS best practices.</p>
+            
+            <p>The comparative analysis highlights the key differences between these services, providing a framework for making informed decisions when designing database architectures in AWS. By understanding the performance characteristics, use cases, and cost considerations of each service, I can recommend optimal database solutions for various application requirements.</p>
+            
+            <p>Moving forward, I plan to expand my knowledge by exploring advanced features like Aurora Serverless, ElastiCache Global Datastore, and RDS Proxy to further enhance my database management capabilities in AWS.</p>
+            <img src="Images/aws_database_architecture.png" alt="Complete AWS Database Architecture" width="400">
+        </section>
+
+        <div class="footer">
+            <p>AWS Database Services Portfolio Project &copy; 2025</p>
+        </div>
+    </div>
+</body>
+</html>
