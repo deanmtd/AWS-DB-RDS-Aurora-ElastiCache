@@ -212,31 +212,30 @@
             <h2>Amazon Aurora Implementation</h2>
             
             <h3>Creation Process</h3>
-            <p>I implemented an Amazon Aurora MySQL-compatible cluster with the following configuration:</p>
-            <ol class="feature-list">
-                <li>Selected <strong>Standard Create</strong> with MySQL compatibility</li>
-                <li>Chose Aurora version <strong>3.04.1</strong> (default at time of implementation)</li>
-                <li>Used <strong>Production</strong> template to access all configuration options</li>
-                <li>Configured cluster identifier as "database-2" with admin credentials</li>
-                <li>Selected <strong>Aurora Standard</strong> for cluster storage configuration</li>
-                <li>Chose <strong>db.t3.medium</strong> instance class for cost-effectiveness</li>
-                <li>Implemented <strong>Multi-AZ</strong> deployment with one writer and one reader for high availability</li>
-                <li>Configured <strong>public access</strong> to allow external connections</li>
-                <li>Created a security group named "demo-database-aurora"</li>
-                <li>Set <strong>local write forwarding</strong> to simplify connection management</li>
-                <li>Created an initial database named "mydb"</li>
-                <li>Set backup retention to 1 day</li>
-            </ol>
-            <img src="Images/aurora_creation_process.png" alt="Aurora Cluster Creation Process" width="400">
-
+            <p>I explored the creation process for an Amazon Aurora MySQL-compatible cluster, observing the following configuration options:</p>
+			<ol class="feature-list">
+                <li><strong>Standard Create</strong>: I reviewed the "Standard Create" process, noting the option for MySQL compatibility.</li>
+                <li><strong>Aurora Version</strong>: I observed the availability of Aurora version</li>
+                <li><strong>Production Template</strong>: I explored the "Production" template, gaining familiarity with the full range of configuration options. </li>
+                <li><strong>Cluster Configuration</strong>I examined the process of configuring a cluster identifier (e.g., "database-2") and setting admin credentials.</li>
+                <li><strong>Cluster Storage</strong>: I reviewed the "Aurora Standard" cluster storage configuration options.</li>
+                <li><strong>Instance Class</strong>: I explored the selection of instance classes, with a focus on cost-effective options like "db.t3.medium."</li>
+                <li><strong>Multi-AZ Deployment</strong>: I observed the setup for a Multi-AZ deployment, noting the configuration of one writer and one reader for high availability.</li>
+                <li><strong>Public Access</strong>: I explored the configuration of public access to allow external connections. </li>
+                <li><strong>Security Group</strong>: I examined the creation of a security group (e.g., "demo-database-aurora").</li>
+                <li><strong>Local Write Forwarding</strong>: I reviewed the option for setting "local write forwarding" to simplify connection management.</li>
+                <li><strong>Initial Database</strong>: I explored the creation of an initial database (e.g., "mydb").</li>
+                <li><strong>Backup Retention</strong>: I observed the configuration of backup retention settings (e.g., 1 day).</li>					
+ 
             <h3>Advanced Features</h3>
-            <p>I explored several advanced Aurora features:</p>
+            <p>Advanced Feature Exploration: I explored and reviewed the following advanced Aurora features:</p>
+
             <ol class="feature-list">
-                <li><strong>Endpoints</strong>: Identified the reader and writer endpoints for proper connection management</li>
-                <li><strong>Read Replica Scaling</strong>: Demonstrated the process to add additional read replicas</li>
-                <li><strong>Auto-Scaling</strong>: Configured a read replica auto-scaling policy based on CPU utilization (target: 60%)</li>
-                <li><strong>Global Database</strong>: Identified the requirements for implementing a cross-region Aurora deployment</li>
-                <li><strong>Serverless Option</strong>: Noted the availability of Aurora Serverless v2 with ACU-based scaling</li>
+                <li><strong>Endpoints</strong>: I identified and explored the purpose of reader and writer endpoints for connection management.</li>
+                <li><strong>Read Replica Scaling</strong>: I reviewed the steps involved in adding additional read replicas.</li>
+                <li><strong>Auto-Scaling</strong>: I explored the configuration of a read replica auto-scaling policy based on CPU utilization (e.g., target: 60%).</li>
+                <li><strong>Global Database</strong>: I identified and noted the requirements for implementing a cross-region Aurora deployment.</li>
+                <li><strong>Serverless Option</strong>: I noted the availability of Aurora Serverless v2 and its ACU-based scaling.</li>
             </ol>
             <img src="Images/aurora_advanced_features.png" alt="Aurora Advanced Features" width="400">
         </section>
